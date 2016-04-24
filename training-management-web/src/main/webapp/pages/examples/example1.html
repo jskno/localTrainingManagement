@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<body>
+<br />
+<br />
+
+	<h2>Example of complex object iteration</h2>
+	<div data-ng-init="courses=[
+		{course:'161', descrip:'Java Basic'},
+		{course:'154', descrip:'SQL'},
+		{course:'159', descrip:'AngularJS'},
+		{course:'110', descrip:'Java Advance'},
+		{course:'124', descrip:'SQL'},
+		{course:'149', descrip:'JSP'},
+		{course:'121', descrip:'Java EE'},
+		{course:'254', descrip:'Oracle SQL'},
+		{course:'259', descrip:'AngularJS'},
+		{course:'361', descrip:'Java'},
+		{course:'454', descrip:'Progress SQL'},
+		{course:'150', descrip:'AngularJS Advance'}
+		]">
+		
+		<div >
+			<ul>
+				<li data-ng-repeat="x in courses | orderBy: 'course'">
+					{{x.course + " " + x.descrip}}
+				</li>
+			</ul>
+		</div>
+	</div>
+		
+	<h2>Example of table with iteration and order by click</h2>
+	<p>Click the table headers to change the sorting order:</p>
+
+	<div>
+
+		<table border="1" width="100%">
+		<tr>
+			<th data-ng-click="orderByMe('name')">Name</th>
+			<th data-ng-click="orderByMe('country')">Country</th>
+		</tr>
+		<tr data-ng-repeat="x in data | orderBy:myOrderBy">
+			<td>{{x.name}}</td>
+			<td>{{x.country}}</td>
+		</tr>
+		</table>
+
+	</div>
+		
+
+</body>
+
+</html>

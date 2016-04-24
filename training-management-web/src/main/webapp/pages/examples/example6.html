@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+</head>
+<body>
+
+	<h1>Example 6</h1>
+	
+	<div class="container">
+		<br/><br/>		
+
+		<h2 data-ng-click="consulta()">{{departamento}}</h2>
+		<h2>What's going on?</h2>
+		
+		<button data-ng-click="enviar()">enviar</button>
+		<button data-ng-click="borrar()">borrar</button>
+		
+		
+		<input type="text" data-ng-mouseover="mensaje()" value="pasa por aqui">{{condicion}}
+		
+		<div style="border: 1px solid red" data-ng-show="condicion">VISIBILIDAD</div>
+
+		<pre style="border: 1px solid black">{{resultado | json}}</pre>
+
+	</div>
+
+</body>
+
+</html>

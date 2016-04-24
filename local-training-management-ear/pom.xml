@@ -1,0 +1,80 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+    <groupId>es.everis.training</groupId>
+    <artifactId>training-management-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <relativePath>../training-management-parent</relativePath>
+  </parent>
+  
+  <artifactId>local-training-management-ear</artifactId>
+  <packaging>ear</packaging>
+  <name>local-training-management EAR</name>
+  
+  <build>
+		<finalName>local-training-management-ear</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<configuration>
+					<displayName>${finalName}</displayName>
+					<filtering>true</filtering>
+					<!-- Colocamos las dependencias de terceros en la carpeta lib -->
+					<defaultLibBundleDir>lib/</defaultLibBundleDir>
+					<!-- Las dependencias propias van a primer nivel -->
+					<modules>
+					
+						<jarModule>
+							<groupId>${parent.groupId}</groupId>
+							<artifactId>training-management-persistence</artifactId>
+							<bundleDir>/lib</bundleDir>
+						</jarModule>
+						
+						<ejbModule>
+							<groupId>${parent.groupId}</groupId>
+							<artifactId>training-management-service</artifactId>
+							<bundleDir>/</bundleDir>
+						</ejbModule>
+
+						<webModule>
+							<groupId>${pom.groupId}</groupId>
+							<artifactId>training-management-web</artifactId>
+							<contextRoot>/training-management</contextRoot>
+						</webModule>
+
+					</modules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<dependencies>
+	
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>training-management-persistence</artifactId>
+			<version>${project.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>training-management-service</artifactId>
+			<version>${project.version}</version>
+			<type>ejb</type>
+			<scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>training-management-web</artifactId>
+			<version>${project.version}</version>
+			<type>war</type>
+			<scope>compile</scope>
+		</dependency>
+		
+	</dependencies>
+</project>

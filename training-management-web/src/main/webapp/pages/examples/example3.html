@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+
+<body>
+<br />
+<br />
+
+	<h2>Example of ng-model</h2>
+	<p>Name: <input type="text" data-ng-model="name"></p>
+	<p>Hello {{name + dataIn.number}}</p>
+	
+	<h2>Example of Controller use</h2>
+	<p>Hello {{ firstName + " " + lastName }}</p>
+	
+	<h2>Example of iteration of array</h2>
+	<div data-ng-init="names=['Alvaro','Raquel','Jose']">
+			<ul>
+				<li data-ng-repeat="x in names">
+					{{x}}
+				</li>
+			</ul>
+	</div>
+
+</body>
+
+</html>

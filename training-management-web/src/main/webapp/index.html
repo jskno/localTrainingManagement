@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" data-ng-app="training">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+	<title>Training Management</title>
+	
+	<script src="static/js/ext/jquery/jquery.js"></script>
+	<script src="static/js/ext/angular/angular.js"></script>
+	<script src="static/js/ext/angular/angular-route.js"></script>
+	<script src="static/js/ext/angular/angular-resource.js"></script>
+	<script src="static/js/app/app.js"></script>
+	<script src="static/js/app/routes.js"></script>
+	<script src="static/js/app/controllers/courseCtrl.js"></script>
+	<script src="static/js/app/controllers/newCourseController.js"></script>
+	<script src="static/js/app/controllers/courseCallCtrl.js"></script>
+			
+	<style type="text/css">
+	</style>
+
+</head>
+
+<body data-ng-controller="mainCtrl">
+
+	<div class="nav-list">
+		<a href="#/courses">Courses</a>
+		<a href="#/coursecalls">Course Calls</a>
+		<a href="#/examples/example1">Example1</a>
+		<a href="#/examples/example2">Example2</a>
+		<a href="#/examples/example3">Example3</a>
+		<a href="#/examples/example4">Example4</a>
+		<a href="#/examples/example5">Example5</a>
+		<a href  data-ng-click="go('examples/example6')">Example6</a>
+	</div>
+	
+	<div>
+	
+		<h1>{{title}}</h1>
+		
+		<div>
+			<div data-ng-view></div>
+		</div>
+		
+		<br/><br/>		
+	
+	</div>
+
+</body>
+
+</html>

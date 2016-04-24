@@ -1,0 +1,34 @@
+
+<div>
+	<button data-ng-click="search()">Search</button>
+	<br />
+	Course Id: <input data-ng-model="courseId"><br/>
+	<button data-ng-click="filter(courseId)">Filter By Id</button>
+	<button data-ng-click="borrar(courseId)">Remove By Id</button>
+	<a href="#/courses/new" class="button">Add Course</a>
+	<button ng-click="go('courses/new')">Add Course</button><br>
+	
+	<table border="1" width="100%">
+	<tr>
+		<th data-ng-click="orderByMe('courseId')">Codigo Curso</th>
+		<th data-ng-click="orderByMe('description')">Descripcion</th>
+		<th data-ng-click="orderByMe('courseTypeData')">Tipo de Curso</th>
+		<th data-ng-click="orderByMe('positionsData')">Cargos</th>
+		<th data-ng-click="orderByMe('company')">Gestion Del Curso</th>
+		<th data-ng-click="orderByMe('existContent')">Existe Temario</th>
+		<th data-ng-click="orderByMe('contentDescription')">Existe Temario</th>
+	</tr>
+	<tr data-ng-repeat="x in resultado | orderBy:myOrderBy">
+		<td>{{x.courseId}}</td>
+		<td>{{x.description}}</td>
+		<td>{{x.courseTypeData | json}}</td>
+		<td>{{x.positionsData}}</td>
+		<td>{{x.company}}</td>
+		<td>{{x.existContent}}</td>
+		<td>{{x.contentDescription}}</td>
+	</tr>
+	</table>
+
+</div>
+
+<pre style="border: 1px solid black">{{resultado | json}}</pre>

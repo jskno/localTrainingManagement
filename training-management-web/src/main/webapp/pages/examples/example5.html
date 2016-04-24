@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<body>
+
+	<h1>Example2</h1>
+	
+	<div data-ng-init="courses=[
+		{course:'161', descrip:'Java Basic'},
+		{course:'154', descrip:'SQL'},
+		{course:'159', descrip:'AngularJS'},
+		{course:'110', descrip:'Java Advance'},
+		{course:'124', descrip:'SQL'},
+		{course:'149', descrip:'JSP'},
+		{course:'121', descrip:'Java EE'},
+		{course:'254', descrip:'Oracle SQL'},
+		{course:'259', descrip:'AngularJS'},
+		{course:'361', descrip:'Java'},
+		{course:'454', descrip:'Progress SQL'},
+		{course:'150', descrip:'AngularJS Advance'}
+		]">>
+		
+			<form name="myForm2">
+				<h2>New Course Call</h2>
+				<br />
+				Codigo Curso: <input name="code" data-ng-model="ourse" required>
+				Descripcion: <input data-ng-model="description">
+				<ul>
+					<li data-ng-repeat="x in courses | filter: ourse |
+										filter: description">
+						{{x.course + " " + x.descrip}}
+					</li>
+				</ul>
+				<br />
+				<br />
+				Tipo: <input data-ng-model="type">
+				Cargos: 
+				Gestion: <input data-ng-model="managerOrganisation">
+				Existe Temario: <input data-ng-model="place">
+				Material: <input data-ng-model="initDate">
+				Descripcion del material: <input data-ng-model="endDate">
+				
+				<button data-ng-click="fillIn()">Rellenar</button>
+				
+			</form>
+		
+		</div>
+
+</body>
+
+</html>
