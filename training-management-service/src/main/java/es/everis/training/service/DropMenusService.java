@@ -8,12 +8,12 @@ import javax.inject.Inject;
 import es.everis.training.dao.course.CourseCallStatusDao;
 import es.everis.training.dao.course.CourseManagerDao;
 import es.everis.training.dao.course.CourseTypeDao;
-import es.everis.training.dao.employee.CentroDao;
+import es.everis.training.dao.employee.CenterDao;
 import es.everis.training.dao.employee.EmployeeProfileDao;
 import es.everis.training.entity.course.CallStatus;
 import es.everis.training.entity.course.CourseManager;
 import es.everis.training.entity.course.CourseType;
-import es.everis.training.entity.employee.Centro;
+import es.everis.training.entity.employee.Center;
 import es.everis.training.entity.employee.EmployeeProfile;
 
 @Stateless
@@ -24,7 +24,7 @@ public class DropMenusService {
 	@Inject
 	private CourseManagerDao courseManagerDao;
 	@Inject
-	private CentroDao coursePlaceDao;
+	private CenterDao coursePlaceDao;
 	@Inject
 	private CourseTypeDao courseTypeDao;
 	@Inject
@@ -38,7 +38,7 @@ public class DropMenusService {
 		return courseManagerDao.findAll();
 	}
 	
-	public List<Centro> getCousePlaces() {
+	public List<Center> getCousePlaces() {
 		return coursePlaceDao.findAll();
 	}
 	

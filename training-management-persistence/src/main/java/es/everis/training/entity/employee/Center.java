@@ -9,10 +9,10 @@ import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="CENTROS")
-@DiscriminatorValue(value="1")
+@Table(name="CENTERS")
+@DiscriminatorValue(value="DEPARTAMENT_TYPE_ID")
 @PrimaryKeyJoinColumn(name="ID")
-public class Centro extends Departament {
+public class Center extends Departament {
 	
 	@OneToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="RESPONSABLE_FORMACION_ID", referencedColumnName="ID")

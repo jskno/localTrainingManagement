@@ -34,7 +34,7 @@ public class Employee {
 	
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="DEPARTAMENT_ID", referencedColumnName="ID")
-	private Departament departament;
+	private Cell cell;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="INCORPORATION_DATE")
@@ -72,11 +72,11 @@ public class Employee {
 	public void setEmployeeProfile(EmployeeProfile employeeProfile) {
 		this.employeeProfile = employeeProfile;
 	}
-	public Departament getDepartament() {
-		return departament;
+	public Cell getCell() {
+		return cell;
 	}
-	public void setDepartament(Departament departament) {
-		this.departament = departament;
+	public void setCell(Cell cell) {
+		this.cell = cell;
 	}
 	public Date getIncorporationDate() {
 		return incorporationDate;

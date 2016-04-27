@@ -15,7 +15,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import es.everis.training.entity.employee.Centro;
+import es.everis.training.entity.employee.Center;
 
 @Entity
 @Table(name="COURSE_CALLS")
@@ -32,7 +32,7 @@ public class CourseCall {
 	
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="COURSE_PLACE", referencedColumnName="ID")
-	private Centro coursePlace;
+	private Center coursePlace;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="COURSE_CALL_STATUS_ID", referencedColumnName="ID")
@@ -91,11 +91,11 @@ public class CourseCall {
 		this.course = course;
 	}
 
-	public Centro getCoursePlace() {
+	public Center getCoursePlace() {
 		return coursePlace;
 	}
 
-	public void setCoursePlace(Centro coursePlace) {
+	public void setCoursePlace(Center coursePlace) {
 		this.coursePlace = coursePlace;
 	}
 

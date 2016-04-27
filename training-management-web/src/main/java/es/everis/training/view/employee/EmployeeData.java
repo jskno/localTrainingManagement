@@ -16,7 +16,7 @@ public class EmployeeData {
 	private String name;
 	private String surname;
 	private EmployeeProfileData employeeProfileData;
-	private DepartamentData departamentData;
+	private CellData cellData;
 	private Date incorporationDate;
 	private String email;
 	
@@ -62,11 +62,11 @@ public class EmployeeData {
 	public void setEmployeeProfileData(EmployeeProfileData employeeProfileData) {
 		this.employeeProfileData = employeeProfileData;
 	}
-	public DepartamentData getDepartamentData() {
-		return departamentData;
+	public CellData getCellData() {
+		return cellData;
 	}
-	public void setDepartamentData(DepartamentData departamentData) {
-		this.departamentData = departamentData;
+	public void setCellData(CellData cellData) {
+		this.cellData = cellData;
 	}
 	
 	public static EmployeeData toData(Employee employee) {
@@ -78,7 +78,7 @@ public class EmployeeData {
 		empData.setEmail(employee.getEmail());
 		empData.setIncorporationDate(employee.getIncorporationDate());
 		empData.setEmployeeProfileData(EmployeeProfileData.toData(employee.getEmployeeProfile()));
-		empData.setDepartamentData(DepartamentData.toData(employee.getDepartament()));
+		empData.setCellData(CellData.toData(employee.getCell()));
 		return empData;
 	}
 	
@@ -101,8 +101,8 @@ public class EmployeeData {
 		if(null != empData.getEmployeeProfileData()) {
 			employee.setEmployeeProfile(EmployeeProfileData.fromData(empData.getEmployeeProfileData()));
 		}
-		if(null != empData.getDepartamentData()) {
-			employee.setDepartament(DepartamentData.fromData(empData.getDepartamentData()));
+		if(null != empData.getCellData()) {
+			employee.setCell(CellData.fromData(empData.getCellData()));
 		}
 		return employee;
 	}

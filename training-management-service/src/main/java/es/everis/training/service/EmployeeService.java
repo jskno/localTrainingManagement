@@ -23,14 +23,14 @@ public class EmployeeService {
 	
 	public List<Employee> getTeamManager(Employee manager) {
 		List<Employee> subordinates = new ArrayList<Employee>();
-		getSubordinates(subordinates, manager.getDepartament());
+		getSubordinates(subordinates, manager.getCell());
 		return subordinates;
 	}
 	
 	public List<Map<DepartamentType, List<Departament>>> getStructure(Employee employee) {
 		List<Map<DepartamentType, List<Departament>>>
 			structure = new ArrayList<Map<DepartamentType, List<Departament>>>();
-		Departament departament = employee.getDepartament();
+		Departament departament = employee.getCell();
 		addTopStructure(structure, departament);
 		addBottomStructure(structure, departament);
 		return structure;

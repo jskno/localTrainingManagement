@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
+import es.everis.training.entity.employee.Cell;
 import es.everis.training.entity.employee.Departament;
 
 @XmlRootElement
@@ -15,7 +16,6 @@ public class DepartamentData {
 	private EmployeeData managerData;
 	private DepartamentData fatherDepartamentData;
 	private List<DepartamentData> subordinatesData;
-	private List<EmployeeData> employeesData;
 
 	public Short getId() {
 		return id;
@@ -57,14 +57,6 @@ public class DepartamentData {
 		this.subordinatesData = subordinatesData;
 	}
 
-	public List<EmployeeData> getEmployeesData() {
-		return employeesData;
-	}
-
-	public void setEmployeesData(List<EmployeeData> employeesData) {
-		this.employeesData = employeesData;
-	}
-	
 	public static DepartamentData toData(Departament dept) {
 		DepartamentData depData = new DepartamentData();
 		depData.setId(dept.getId());
@@ -72,7 +64,6 @@ public class DepartamentData {
 		depData.setManagerData(EmployeeData.toData(dept.getManager()));
 		depData.setFatherDepartamentData(toData(dept.getFatherDepartament()));
 		depData.setSubordinatesData(toData(dept.getSubordinates()));
-		depData.setEmployeesData(EmployeeData.toData(dept.getEmployees()));
 		return depData;
 	}
 	
@@ -99,9 +90,6 @@ public class DepartamentData {
 			}
 			if(null != deptData.getSubordinatesData()) {
 				dept.setSubordinates(fromData(deptData.getSubordinatesData()));
-			}
-			if(null != deptData.getEmployeesData()) {
-				dept.setEmployees(EmployeeData.fromData(deptData.getEmployeesData()));
 			}
 			return dept;
 		} else {
