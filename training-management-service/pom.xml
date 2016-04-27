@@ -30,9 +30,17 @@
 			<groupId>${project.groupId}</groupId>
 			<artifactId>training-management-persistence</artifactId>
 			<version>${project.version}</version>
-			<type>jar</type>
+			<type>ejb</type>
 			<scope>provided</scope>
 	</dependency>
+	
+	<dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.1-901.jdbc4</version>
+			<scope>test</scope>
+		</dependency>
+		
   </dependencies>
   
 </project>

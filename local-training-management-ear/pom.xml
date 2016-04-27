@@ -26,11 +26,11 @@
 					<!-- Las dependencias propias van a primer nivel -->
 					<modules>
 					
-						<jarModule>
+						<ejbModule>
 							<groupId>${parent.groupId}</groupId>
 							<artifactId>training-management-persistence</artifactId>
-							<bundleDir>/lib</bundleDir>
-						</jarModule>
+							<bundleDir>/</bundleDir>
+						</ejbModule>
 						
 						<ejbModule>
 							<groupId>${parent.groupId}</groupId>
@@ -56,7 +56,7 @@
 			<groupId>${project.groupId}</groupId>
 			<artifactId>training-management-persistence</artifactId>
 			<version>${project.version}</version>
-			<type>jar</type>
+			<type>ejb</type>
 			<scope>compile</scope>
 		</dependency>
 		

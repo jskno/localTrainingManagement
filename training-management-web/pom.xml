@@ -43,7 +43,7 @@
 			<groupId>${project.groupId}</groupId>
 			<artifactId>training-management-persistence</artifactId>
 			<version>${project.version}</version>
-			<type>jar</type>
+			<type>ejb</type>
 			<scope>provided</scope>
 		</dependency>
 		

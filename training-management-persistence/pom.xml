@@ -9,8 +9,20 @@
   </parent>
   
   <artifactId>training-management-persistence</artifactId>
-  <packaging>jar</packaging>
+  <packaging>ejb</packaging>
   <name>training-management PERSISTENCE</name>
   <description>	</description>
+  
+  <build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-ejb-plugin</artifactId>
+				<inherited>true</inherited>
+				<configuration>
+					<ejbVersion>3.0</ejbVersion>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 	
 </project>
